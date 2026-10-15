@@ -1,0 +1,53 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin vintage-frame {
+  background: #fbf7ee;
+  padding: 14px 14px 28px 14px;
+  box-shadow: $shadow-polaroid;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: $transition-smooth;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 70%, rgba(85, 55, 30, 0.15) 100%);
+    pointer-events: none;
+  }
+}
+
+@mixin gold-heading {
+  font-family: $font-title;
+  background: linear-gradient(135deg, $color-secondary-light 0%, $color-secondary 50%, $color-secondary-dark 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: #{$bp-mobile}) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: #{$bp-tablet}) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (max-width: #{$bp-desktop}) { @content; }
+  } @else if $breakpoint == wide {
+    @media (min-width: #{$bp-wide}) { @content; }
+  }
+}

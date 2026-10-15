@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e2246" />
+  
+  <title>San José La Salle (1967-1969) | Campeonato de Fútbol y Recuerdos de Oro</title>
+  <meta name="description" content="Homenaje histórico y memoria viva de los campeonatos de fútbol y presentaciones de gala del Colegio San José La Salle durante los años 1967, 1968 y 1969." />
+  
+  <!-- Open Graph / Redes Sociales y WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="San José La Salle (1967-1969) — Aquellos Años Inolvidables" />
+  <meta property="og:description" content="Revive las fotos, la alineación campeona y las presentaciones de gala que marcaron una época. Vuelve a ver a tus compañeros." />
+  <meta property="og:image" content="./images/futbol-1968.svg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+  <!-- Google Fonts: Cinzel (solemne), Cormorant Garamond (nostálgica), Plus Jakarta Sans (interfaz) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navegación y Barra Superior -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#inicio" class="brand" title="San José La Salle 1967-1969">
+        <img src="./images/escudo-lasalle.svg" alt="Escudo San José La Salle" class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-title">San José La Salle</span>
+          <span class="brand-years">1967 • 1968 • 1969</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#historia">La Trilogía</a>
+        <a href="#alineacion">El Equipo Campeón</a>
+        <a href="#album">Álbum de Fotos</a>
+        <a href="#recuerdos">Muro de Egresados</a>
+      </nav>
+
+      <button id="sound-toggle" class="sound-toggle-btn" aria-label="Activar música de época">
+        <span class="sound-icon">🎵</span> Música de Época
+      </button>
+    </div>
+  </header>
+
+  <!-- Portada / Hero Emotivo -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-bg-media"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="star-icon">★</span>
+        <span>Memoria Histórica Lasallista</span>
+        <span class="star-icon">★</span>
+      </div>
+
+      <h1 class="hero-main-title">
+        El Alma de una Época Inolvidable
+        <span class="highlight">San José La Salle (1967 - 1969)</span>
+      </h1>
+
+      <p class="hero-description">
+        "El silbato final sonó hace más de medio siglo, pero el eco del gol y el orgullo de haber vestido la camiseta albiazul siguen latiendo intactos en el corazón de cada hermano."
+      </p>
+
+      <div class="hero-actions">
+        <a href="#album" class="btn-primary-lasalle">Revivir el Álbum Fotográfico</a>
+        <a href="#recuerdos" class="btn-outline-lasalle">Dejar tu Recuerdo</a>
+      </div>
+
+      <div class="hero-stats-row">
+        <div class="stat-card">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Títulos Consecutivos</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">41</span>
+          <span class="stat-label">Partidos Inolvidables</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">23</span>
+          <span class="stat-label">Presentaciones de Gala</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 1: Línea de Tiempo Interactiva -->
+  <section id="historia" class="timeline-section">
+    <div class="section-header">
+      <span class="section-subtitle">El Camino a la Inmortalidad</span>
+      <h2 class="section-title">Crónica de Tres Años Legendarios</h2>
+      <p class="section-desc">Selecciona un año para recorrer las hazañas en la cancha, las presentaciones escolares y las historias de vida de cada temporada.</p>
+    </div>
+
+    <!-- Selector de Años -->
+    <div class="year-selector">
+      <button class="year-btn" data-year="1967">Año 1967</button>
+      <button class="year-btn active" data-year="1968">Año 1968</button>
+      <button class="year-btn" data-year="1969">Año 1969</button>
+    </div>
+
+    <!-- Contenido Dinámico del Año -->
+    <div id="year-content-area" class="year-display">
+      <!-- Se llena dinámicamente mediante timeline.js -->
+    </div>
+  </section>
+
+  <!-- Sección 2: La Cancha y Alineación Táctica Histórica -->
+  <section id="alineacion" class="lineup-section">
+    <div class="lineup-container">
+      <div class="section-header">
+        <span class="section-subtitle">Táctica y Hermandad</span>
+        <h2 class="section-title">La Maquinaria Albiazul de 1968</h2>
+        <p class="section-desc">Haz clic en cualquier dorsal sobre el terreno de juego para conocer el rostro, la hazaña y la huella que dejó cada guerrero en la final del bicampeonato.</p>
+      </div>
+
+      <div class="lineup-wrapper">
+        <!-- Cancha Táctica -->
+        <div class="pitch-container">
+          <div class="pitch-markings">
+            <div class="center-line"></div>
+            <div class="center-circle"></div>
+            <div class="penalty-box-left"></div>
+            <div class="penalty-box-right"></div>
+          </div>
+          <!-- Pines de jugadores generados por lineup.js -->
+          <div id="pitch-players" class="pitch-players"></div>
+        </div>
+
+        <!-- Ficha del Jugador -->
+        <div id="player-spotlight" class="player-spotlight">
+          <!-- Se llena dinámicamente -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3: Álbum de Recuerdos y Galería Vintage -->
+  <section id="album" class="gallery-section">
+    <div class="section-header">
+      <span class="section-subtitle">El Baúl de la Memoria</span>
+      <h2 class="section-title">Álbum de Recuerdos y Recortes</h2>
+      <p class="section-desc">Fotografías restauradas de partidos, formaciones de gimnasia, pirámides humanas y momentos fraternos. Haz clic sobre cualquier fotografía para ampliarla.</p>
+    </div>
+
+    <div class="gallery-controls">
+      <!-- Buscador -->
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="gallery-search" placeholder="Buscar por compañero, año, trofeo, gol..." aria-label="Buscar en la galería" />
+      </div>
+
+      <!-- Filtros de categoría -->
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-category="all">Todos los Recuerdos</button>
+        <button class="filter-btn" data-category="futbol">Fútbol y Campeonatos</button>
+        <button class="filter-btn" data-category="presentaciones">Presentaciones y Desfiles</button>
+        <button class="filter-btn" data-category="vida-estudiantil">Vida Colegial y Gradas</button>
+      </div>
+    </div>
+
+    <!-- Rejilla de fotos estilo Polaroid -->
+    <div id="gallery-grid" class="gallery-grid">
+      <!-- Se llena dinámicamente mediante gallery.js -->
+    </div>
+  </section>
+
+  <!-- Sección 4: Muro de Anécdotas y Dedicatorias -->
+  <section id="recuerdos" class="guestbook-section">
+    <div class="section-header">
+      <span class="section-subtitle">Indivisa Manent</span>
+      <h2 class="section-title">El Muro de los Antiguos Alumnos</h2>
+      <p class="section-desc">¿Reconoces a alguien? ¿Viviste la emoción en las gradas? Comparte tu anécdota para que tus hijos y nietos conozcan tu historia.</p>
+    </div>
+
+    <div class="guestbook-layout">
+      <!-- Formulario para escribir anécdota -->
+      <div class="guestbook-form-card">
+        <h3 class="form-title">Escribir una Dedicatoria</h3>
+        <p class="form-desc">Tu mensaje se guardará en este libro de honor digital y quedará registrado para toda la comunidad.</p>
+
+        <form id="guestbook-form">
+          <div class="form-group">
+            <label for="memory-name">Tu Nombre y Apellidos</label>
+            <input type="text" id="memory-name" placeholder="Ej. Guillermo Mendoza P." required />
+          </div>
+
+          <div class="form-group">
+            <label for="memory-role">Tu Vínculo / Promoción</label>
+            <input type="text" id="memory-role" placeholder="Ej. Promoción 1969 / Nieto del arquero Paredes" required />
+          </div>
+
+          <div class="form-group">
+            <label for="memory-text">Tu Recuerdo o Mensaje</label>
+            <textarea id="memory-text" placeholder="Escribe lo que sentiste, una anécdota del partido o el recuerdo de tus profesores..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-memory">Publicar en el Libro de Honor</button>
+        </form>
+      </div>
+
+      <!-- Feed de dedicatorias -->
+      <div id="guestbook-feed" class="guestbook-feed">
+        <!-- Se llena dinámicamente mediante guestbook.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Lightbox para Ampliar Fotografías -->
+  <div id="photo-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Visor de fotografía">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+      <div class="modal-body-layout">
+        <div class="modal-image-col">
+          <img src="" alt="" />
+        </div>
+        <div class="modal-info-col">
+          <span class="modal-category-tag"></span>
+          <h3 class="modal-title"></h3>
+          <span class="modal-subtitle"></span>
+          <p class="modal-description"></p>
+          <blockquote class="modal-caption-quote"></blockquote>
+          
+          <div class="memory-help-box">
+            <p><strong>¿Identificas a algún compañero en esta foto?</strong></p>
+            <button class="btn-help-identify">Aportar nombres o detalles en el libro de honor &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de Página Institucional -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <img src="./images/escudo-lasalle.svg" alt="Escudo San José La Salle" class="footer-crest" />
+      <p class="footer-motto">"Indivisa Manent — Lo que está unido permanece"</p>
+      
+      <div class="footer-links">
+        <a href="#historia">Los Campeonatos</a>
+        <a href="#alineacion">Equipo 1968</a>
+        <a href="#album">Fototeca</a>
+        <a href="#recuerdos">Libro de Honor</a>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Homenaje a la comunidad lasallista • Temporadas 1967 - 1968 - 1969</span>
+        <span>Publicado con GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script modular principal procesado por Vite -->
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

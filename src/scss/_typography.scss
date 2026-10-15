@@ -1,0 +1,40 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-title;
+  color: $color-parchment;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+}
+
+.gold-title {
+  @include gold-heading;
+}
+
+.lead-text {
+  font-size: 1.15rem;
+  color: $color-parchment-muted;
+  font-weight: 300;
+  max-width: 720px;
+}
+
+.vintage-caption {
+  font-family: $font-serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #4a3828;
+}
+
+.tag-year {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(197, 155, 39, 0.15);
+  border: 1px solid $color-secondary;
+  color: $color-secondary-light;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+}

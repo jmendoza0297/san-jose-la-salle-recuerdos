@@ -1,0 +1,224 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.gallery-section {
+  padding: 90px 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+
+  .gallery-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 48px;
+
+    .search-box {
+      width: 100%;
+      max-width: 460px;
+      position: relative;
+
+      input {
+        width: 100%;
+        padding: 12px 18px 12px 42px;
+        background: rgba(22, 19, 16, 0.9);
+        border: 1px solid rgba(197, 155, 39, 0.3);
+        border-radius: 25px;
+        color: $color-parchment;
+        font-size: 0.95rem;
+        outline: none;
+        transition: $transition-smooth;
+
+        &::placeholder {
+          color: $color-text-muted;
+          font-style: italic;
+        }
+
+        &:focus {
+          border-color: $color-secondary;
+          box-shadow: 0 0 15px rgba(197, 155, 39, 0.2);
+        }
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $color-secondary;
+        font-size: 1rem;
+        pointer-events: none;
+      }
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+
+      .filter-btn {
+        padding: 8px 18px;
+        font-size: 0.88rem;
+        color: $color-parchment-muted;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(197, 155, 39, 0.2);
+        border-radius: 20px;
+
+        &:hover {
+          color: $color-parchment;
+          border-color: $color-secondary;
+        }
+
+        &.active {
+          color: #120e06;
+          background: $color-secondary;
+          border-color: $color-secondary;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  // Grid de fotos estilo álbum de recortes
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+
+    @include responsive(mobile) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .photo-card {
+      @include vintage-frame;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        transform: translateY(-8px) rotate(-0.5deg);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+
+        .photo-media img {
+          transform: scale(1.03);
+          filter: sepia(0.15) contrast(1.05);
+        }
+
+        .view-badge {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      .photo-media {
+        position: relative;
+        overflow: hidden;
+        border-radius: 2px;
+        background: #1f1710;
+        aspect-ratio: 4/3;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: sepia(0.3) contrast(1);
+          transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .photo-year-stamp {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: rgba(14, 34, 70, 0.85);
+          color: $color-secondary-light;
+          border: 1px solid $color-secondary;
+          font-size: 0.75rem;
+          font-weight: 700;
+          padding: 3px 8px;
+          border-radius: 3px;
+          letter-spacing: 1px;
+        }
+
+        .view-badge {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0.8);
+          background: rgba(14, 18, 28, 0.85);
+          color: $color-secondary-light;
+          border: 1px solid $color-secondary;
+          padding: 10px 18px;
+          border-radius: 25px;
+          font-size: 0.82rem;
+          font-weight: 600;
+          letter-spacing: 1px;
+          opacity: 0;
+          transition: $transition-smooth;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          backdrop-filter: blur(4px);
+        }
+      }
+
+      .photo-details {
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        .photo-title {
+          font-family: $font-title;
+          font-size: 1.12rem;
+          font-weight: 700;
+          color: #241910;
+          line-height: 1.3;
+        }
+
+        .photo-subtitle {
+          font-size: 0.8rem;
+          color: #7a634e;
+          font-family: $font-sans;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .photo-caption {
+          font-family: $font-serif;
+          font-style: italic;
+          font-size: 1.05rem;
+          color: #553e2a;
+          margin-top: 4px;
+          line-height: 1.4;
+        }
+
+        .photo-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-top: 8px;
+
+          .tag {
+            font-size: 0.72rem;
+            background: rgba(85, 55, 30, 0.1);
+            color: #5d442e;
+            padding: 2px 8px;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: $color-parchment-muted;
+    font-size: 1.1rem;
+    font-family: $font-serif;
+    font-style: italic;
+  }
+}

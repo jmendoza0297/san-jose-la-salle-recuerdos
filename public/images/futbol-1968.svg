@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <!-- Filtro sepia y grano de foto antigua -->
+    <linearGradient id="sepiaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d2d1e"/>
+      <stop offset="50%" stop-color="#705238"/>
+      <stop offset="100%" stop-color="#a07d58"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="60%">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1f140a" stop-opacity="0.8"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Papel fotográfico envejecido -->
+  <rect width="800" height="500" fill="#2c2014"/>
+  <rect x="25" y="25" width="750" height="450" fill="url(#sepiaGrad)"/>
+
+  <!-- Cancha y tribunas de época -->
+  <path d="M 25,350 L 800,350 L 775,475 L 25,475 Z" fill="#443221" opacity="0.8"/>
+  <line x1="50" y1="420" x2="750" y2="420" stroke="#cbb090" stroke-width="2" stroke-dasharray="10,8" opacity="0.5"/>
+  <circle cx="400" cy="420" r="45" fill="none" stroke="#cbb090" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Portería antigua de madera -->
+  <rect x="330" y="240" width="140" height="110" fill="none" stroke="#e8d5be" stroke-width="4" opacity="0.85"/>
+  <line x1="330" y1="240" x2="350" y2="220" stroke="#e8d5be" stroke-width="2" opacity="0.6"/>
+  <line x1="470" y1="240" x2="490" y2="220" stroke="#e8d5be" stroke-width="2" opacity="0.6"/>
+  <line x1="350" y1="220" x2="490" y2="220" stroke="#e8d5be" stroke-width="2" opacity="0.6"/>
+
+  <!-- Siluetas del equipo en pose histórica de campeonato -->
+  <!-- Fila parada: 6 jugadores -->
+  <g fill="#ecd8c1" opacity="0.9">
+    <!-- Arquero con buzo oscuro y boina -->
+    <circle cx="180" cy="230" r="14" fill="#23170e"/>
+    <path d="M 166,245 L 194,245 L 190,320 L 170,320 Z" fill="#23170e"/>
+    
+    <!-- Jugadores parados -->
+    <circle cx="230" cy="225" r="14"/>
+    <path d="M 216,240 L 244,240 L 240,320 L 220,320 Z"/>
+    
+    <circle cx="280" cy="222" r="14"/>
+    <path d="M 266,238 L 294,238 L 290,320 L 270,320 Z"/>
+    
+    <!-- Capitán con banda -->
+    <circle cx="330" cy="225" r="14"/>
+    <path d="M 316,240 L 344,240 L 340,320 L 320,320 Z"/>
+    <rect x="318" y="260" width="24" height="6" fill="#fdf0cd"/>
+
+    <!-- Hermano religioso con hábito de La Salle -->
+    <circle cx="380" cy="220" r="14" fill="#23170e"/>
+    <path d="M 364,236 L 396,236 L 400,340 L 360,340 Z" fill="#18110b"/>
+    <!-- Babero blanco característico de los Hermanos -->
+    <polygon points="375,236 385,236 383,260 377,260" fill="#fff9eb"/>
+
+    <circle cx="430" cy="225" r="14"/>
+    <path d="M 416,240 L 444,240 L 440,320 L 420,320 Z"/>
+
+    <circle cx="480" cy="222" r="14"/>
+    <path d="M 466,238 L 494,238 L 490,320 L 470,320 Z"/>
+  </g>
+
+  <!-- Fila en cuclillas: 5 jugadores -->
+  <g fill="#ecd8c1" opacity="0.95">
+    <circle cx="210" cy="285" r="13"/>
+    <path d="M 198,300 L 222,300 L 220,345 L 200,345 Z"/>
+
+    <circle cx="260" cy="285" r="13"/>
+    <path d="M 248,300 L 272,300 L 270,345 L 250,345 Z"/>
+
+    <!-- Balón de cuero con costura de tiento clásico de los 60s -->
+    <circle cx="310" cy="335" r="18" fill="#d2a875" stroke="#3d240e" stroke-width="2"/>
+    <line x1="300" y1="335" x2="320" y2="335" stroke="#3d240e" stroke-width="2"/>
+    <line x1="305" y1="330" x2="305" y2="340" stroke="#3d240e" stroke-width="2"/>
+    <line x1="315" y1="330" x2="315" y2="340" stroke="#3d240e" stroke-width="2"/>
+
+    <circle cx="360" cy="285" r="13"/>
+    <path d="M 348,300 L 372,300 L 370,345 L 350,345 Z"/>
+
+    <circle cx="410" cy="285" r="13"/>
+    <path d="M 398,300 L 422,300 L 420,345 L 400,345 Z"/>
+
+    <circle cx="460" cy="285" r="13"/>
+    <path d="M 448,300 L 472,300 L 470,345 L 450,345 Z"/>
+  </g>
+
+  <!-- Efecto viñeta y sello de archivo histórico -->
+  <rect x="25" y="25" width="750" height="450" fill="url(#vignette)"/>
+
+  <!-- Tira de borde estilo negativo fotográfico -->
+  <g fill="#d8bc9b" opacity="0.7" font-family="'Courier New', monospace" font-size="13">
+    <text x="50" y="465">ARCHIVO HISTÓRICO SJL • SERIE DEPORTIVA 1968 • ROLLO KODAK PLUS-X PAN</text>
+    <text x="680" y="465">№ 1968-F01</text>
+  </g>
+</svg>

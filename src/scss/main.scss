@@ -1,0 +1,86 @@
+// ==========================================
+// Main SCSS Manifest - San José La Salle (1967-1969)
+// ==========================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'reset';
+@use 'typography';
+@use 'hero';
+@use 'timeline';
+@use 'gallery';
+@use 'lineup';
+@use 'guestbook';
+@use 'modal';
+
+// Footer Colegial Histórico
+.site-footer {
+  background: #090806;
+  border-top: 1px solid rgba(197, 155, 39, 0.25);
+  padding: 60px 24px 30px;
+  color: $color-text-muted;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .footer-crest {
+    width: 60px;
+    height: 72px;
+    opacity: 0.85;
+    transition: $transition-smooth;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  .footer-motto {
+    font-family: $font-serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: $color-secondary;
+    letter-spacing: 1px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a {
+      font-size: 0.85rem;
+      color: $color-parchment-muted;
+
+      &:hover {
+        color: $color-secondary-light;
+      }
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    @include responsive(mobile) {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}

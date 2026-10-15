@@ -1,0 +1,226 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.lineup-section {
+  padding: 90px 24px;
+  background: radial-gradient(circle at 50% 30%, rgba(18, 38, 26, 0.4) 0%, rgba(14, 18, 28, 0.95) 100%);
+  border-top: 1px solid rgba(197, 155, 39, 0.15);
+  border-bottom: 1px solid rgba(197, 155, 39, 0.15);
+
+  .lineup-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .lineup-wrapper {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 36px;
+    align-items: center;
+
+    @include responsive(desktop) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Cancha de fútbol clásica
+  .pitch-container {
+    position: relative;
+    background: #1e3822;
+    border: 4px solid #e2d2ba;
+    border-radius: 8px;
+    aspect-ratio: 16/11;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    padding: 20px;
+
+    // Rayas de césped cortado clásico
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.08) 30px,
+      transparent 30px,
+      transparent 60px
+    );
+
+    .pitch-markings {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border: 2px solid rgba(235, 220, 195, 0.45);
+      pointer-events: none;
+
+      .center-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: rgba(235, 220, 195, 0.45);
+      }
+
+      .center-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 2px solid rgba(235, 220, 195, 0.45);
+      }
+
+      .penalty-box-left {
+        position: absolute;
+        top: 20%;
+        bottom: 20%;
+        left: 0;
+        width: 18%;
+        border: 2px solid rgba(235, 220, 195, 0.45);
+        border-left: none;
+      }
+
+      .penalty-box-right {
+        position: absolute;
+        top: 20%;
+        bottom: 20%;
+        right: 0;
+        width: 18%;
+        border: 2px solid rgba(235, 220, 195, 0.45);
+        border-right: none;
+      }
+    }
+
+    .pitch-players {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+    }
+
+    .player-pin {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #0e2246;
+      border: 2px solid $color-secondary;
+      color: $color-secondary-light;
+      font-weight: 700;
+      font-size: 0.95rem;
+      @include flex-center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: $transition-smooth;
+
+      &:hover, &.active {
+        background: $color-secondary;
+        color: #120e06;
+        border-color: #fff;
+        transform: translate(-50%, -50%) scale(1.25);
+        box-shadow: 0 0 20px rgba(243, 207, 101, 0.8);
+        z-index: 20;
+      }
+
+      .pin-name-tooltip {
+        position: absolute;
+        bottom: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        background: rgba(14, 18, 28, 0.9);
+        color: $color-parchment;
+        font-size: 0.72rem;
+        padding: 2px 6px;
+        border-radius: 3px;
+        pointer-events: none;
+        opacity: 0.85;
+      }
+    }
+  }
+
+  // Ficha del jugador seleccionado
+  .player-spotlight {
+    background: rgba(22, 19, 16, 0.9);
+    border: 1px solid rgba(197, 155, 39, 0.3);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .spotlight-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid rgba(197, 155, 39, 0.2);
+      padding-bottom: 16px;
+
+      .player-badge-number {
+        width: 52px;
+        height: 52px;
+        background: linear-gradient(135deg, $color-secondary-light 0%, $color-secondary-dark 100%);
+        color: #120e06;
+        font-family: $font-title;
+        font-size: 1.6rem;
+        font-weight: 800;
+        border-radius: 50%;
+        @include flex-center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      .player-headline {
+        display: flex;
+        flex-direction: column;
+
+        .player-name {
+          font-family: $font-title;
+          font-size: 1.35rem;
+          color: $color-parchment;
+        }
+
+        .player-position {
+          font-size: 0.85rem;
+          color: $color-secondary;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    .spotlight-anecdote {
+      font-family: $font-serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: $color-parchment-muted;
+      line-height: 1.6;
+    }
+
+    .coach-box {
+      margin-top: 10px;
+      padding: 14px;
+      background: rgba(14, 34, 70, 0.4);
+      border-left: 3px solid $color-secondary;
+      border-radius: 4px;
+
+      .coach-label {
+        font-size: 0.75rem;
+        color: $color-secondary;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+      }
+
+      .coach-name {
+        font-size: 0.95rem;
+        color: $color-parchment;
+        margin-top: 2px;
+      }
+    }
+  }
+}

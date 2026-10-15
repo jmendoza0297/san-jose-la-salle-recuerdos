@@ -1,0 +1,38 @@
+// ==========================================
+// Variables de Color e Identidad Lasallista
+// ==========================================
+
+// Tonos Institucionales San José La Salle
+$color-primary: #0e2246;          // Azul Noche Colegial Profundo
+$color-primary-light: #1c3d73;    // Azul Marino Lasallista
+$color-secondary: #c59b27;        // Oro Antiguo / Trofeo
+$color-secondary-light: #f3cf65;  // Brillo Dorado
+$color-secondary-dark: #8c6a15;   // Bronce envejecido
+
+// Paleta Nostálgica y Vintage (Papel de Álbum y Sepia)
+$color-bg: #141210;               // Fondo oscuro cálido
+$color-card-bg: #1e1a16;          // Cartulina fotográfica oscura
+$color-parchment: #f6eedb;        // Papel pergamino histórico
+$color-parchment-muted: #d8cbb5;  // Texto suave sobre pergamino
+$color-sepia: #4b3621;            // Sepia fotográfico
+$color-text: #eae2d5;             // Texto principal de alta legibilidad
+$color-text-muted: #a69886;       // Metadatos y fechas
+$color-border: rgba(197, 155, 39, 0.25);
+$color-border-hover: rgba(243, 207, 101, 0.6);
+
+// Tipografías
+$font-title: 'Cinzel', 'Playfair Display', Georgia, serif;
+$font-serif: 'Cormorant Garamond', Georgia, serif;
+$font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+$font-mono: 'Courier New', Courier, monospace;
+
+// Transiciones y Sombras
+$transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+$shadow-polaroid: 0 12px 30px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+$shadow-gold: 0 0 25px rgba(212, 175, 55, 0.25);
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-wide: 1280px;

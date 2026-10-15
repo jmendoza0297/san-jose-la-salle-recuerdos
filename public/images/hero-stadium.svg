@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%">
+  <defs>
+    <radialGradient id="heroAtmosphere" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#4e3b29"/>
+      <stop offset="40%" stop-color="#2a1d13"/>
+      <stop offset="100%" stop-color="#100b07"/>
+    </radialGradient>
+    <linearGradient id="stadiumLights" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe6b0" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffe6b0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo nocturno/atardecer de época -->
+  <rect width="1200" height="650" fill="url(#heroAtmosphere)"/>
+
+  <!-- Siluetas de reflectores clásicos de torre -->
+  <line x1="120" y1="80" x2="300" y2="400" stroke="#d5b078" stroke-width="1.5" opacity="0.3"/>
+  <polygon points="120,80 0,650 350,650" fill="url(#stadiumLights)"/>
+  <polygon points="1080,80 850,650 1200,650" fill="url(#stadiumLights)"/>
+
+  <!-- Gradas con público fervoroso silueteado -->
+  <ellipse cx="600" cy="550" rx="680" ry="240" fill="#1b120c"/>
+  <ellipse cx="600" cy="565" rx="660" ry="220" fill="#24180f"/>
+  <ellipse cx="600" cy="580" rx="640" ry="200" fill="#2d1f14"/>
+
+  <!-- Cancha con césped de época iluminada -->
+  <ellipse cx="600" cy="620" rx="550" ry="160" fill="#3b2b1a"/>
+
+  <!-- Líneas de la cancha en tiza blanca difusa -->
+  <ellipse cx="600" cy="620" rx="480" ry="130" fill="none" stroke="#d9be9e" stroke-width="2" opacity="0.4"/>
+  <ellipse cx="600" cy="620" rx="120" ry="50" fill="none" stroke="#d9be9e" stroke-width="2" opacity="0.4"/>
+  <line x1="600" y1="490" x2="600" y2="650" stroke="#d9be9e" stroke-width="2" opacity="0.4"/>
+
+  <!-- Banderas y pancartas en la tribuna -->
+  <path d="M 200,430 Q 230,420 260,430 L 260,450 Q 230,440 200,450 Z" fill="#d9be9e" opacity="0.6"/>
+  <path d="M 900,425 Q 940,415 980,425 L 980,445 Q 940,435 900,445 Z" fill="#1a3b68" opacity="0.7"/>
+
+  <!-- Siluetas de jugadores celebrando con brazos en alto -->
+  <g fill="#ecd8c1" opacity="0.85">
+    <circle cx="560" cy="550" r="10"/>
+    <path d="M 550,560 L 570,560 L 568,600 L 552,600 Z"/>
+    <line x1="550" y1="565" x2="540" y2="540" stroke="#ecd8c1" stroke-width="3"/>
+    <line x1="570" y1="565" x2="580" y2="540" stroke="#ecd8c1" stroke-width="3"/>
+
+    <circle cx="610" cy="545" r="10"/>
+    <path d="M 600,555 L 620,555 L 618,598 L 602,598 Z"/>
+    <line x1="600" y1="560" x2="590" y2="535" stroke="#ecd8c1" stroke-width="3"/>
+    <line x1="620" y1="560" x2="630" y2="535" stroke="#ecd8c1" stroke-width="3"/>
+
+    <circle cx="650" cy="552" r="10"/>
+    <path d="M 640,562 L 660,562 L 658,600 L 642,600 Z"/>
+
+    <!-- Copa levantada -->
+    <path d="M 602,510 L 618,510 L 615,528 L 605,528 Z" fill="#fbd358"/>
+    <circle cx="610" cy="506" r="6" fill="#fbd358"/>
+  </g>
+
+  <!-- Filtro viñeta sutil de borde -->
+  <rect width="1200" height="650" fill="none" stroke="#23170e" stroke-width="20" opacity="0.5"/>
+</svg>
